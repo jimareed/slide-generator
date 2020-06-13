@@ -3,7 +3,8 @@ package slides
 import (
     "bufio"
 	"strings"
-    "os"
+	"os"
+	"fmt"
 )
 
 // single slide
@@ -51,7 +52,29 @@ func Read(path string) (SlideDeck, error) {
 	return deck, err
 }
 
-func Write(deck SlideDeck, output string) (error) {
+func Write(deck SlideDeck, path string) (error) {
+
+	filename := path + "/README.md"
+
+    f, err := os.Create(filename)
+    if err != nil {
+        fmt.Println(err)
+                f.Close()
+        return err
+    }
+
+    for _, v := range deck.text {
+        fmt.Fprintln(f, v)
+        if err != nil {
+            fmt.Println(err)
+            return err
+        }
+    }
+    err = f.Close()
+    if err != nil {
+        fmt.Println(err)
+        return err
+    }
 
 	return nil
 }
