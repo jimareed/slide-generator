@@ -10,19 +10,33 @@ import (
 func main() {
 
 	server := flag.Bool("server", false, "run in server mode")
-	path  := flag.String("path", "", "path to source")
+	input := flag.String("input", "", "path to source")
+	output := flag.String("output", "", "path to source")
 
 	flag.Parse()
 
-	if *path == "" {
-		log.Fatal("usage: slide-generator -path <path> [-server]")
+	if *input == "" {
+		log.Fatal("usage: slide-generator -input <path> [-output <path>][-server]")
 	}
 
-	output, err := slides.Execute(*path)		
+
+	log.Print("reading deck from ", *input)
+
+	deck, err := slides.Read(*input)
 	if err == nil {
-		log.Print("output: ", output)
+		log.Print(deck.Title, " read successful.")
 	} else {
 		log.Fatal(err)
+	}
+
+	if *output != "" {
+		log.Print("writing ", deck.Title, " to ", *output)
+		err = slides.Write(deck, *output)
+		if err == nil {
+			log.Print(deck.Title, " write successful.")
+		} else {
+			log.Fatal(err)
+		}
 	}
 
 	if *server {
