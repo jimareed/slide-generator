@@ -1,1 +1,1 @@
-# story-teller
+# slide-generator
