@@ -3,22 +3,47 @@ package main
 import (
 	"flag"
 	"log"
-
+	"io"
+	"net/http"
+	
+	"github.com/gorilla/mux"
 	"github.com/jimareed/slides"
+	"github.com/jimareed/drawing"
 )
+
+
+func getHandler(w http.ResponseWriter, r *http.Request) {
+
+	d, err := drawing.FromString("test")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	s, err := drawing.ToSvg(d)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	io.WriteString(w, "<html><body>" + s + "</body></html>\n")
+	
+}
 
 func main() {
 
 	server := flag.Bool("server", false, "run in server mode")
 	input := flag.String("input", "", "path to source")
 	output := flag.String("output", "", "path to source")
+	help := flag.Bool("help", false, "help")
 
 	flag.Parse()
 
-	if *input == "" {
-		log.Fatal("usage: slide-generator -input <path> [-output <path>][-server]")
+	if *help {
+		log.Fatal("usage: slide-generator [-input <path>][-output <path>][-server][-help]")
 	}
-
+		
+	if *input == "" {
+		*input = "./slides"
+	}
 
 	log.Print("reading deck from ", *input)
 
@@ -40,6 +65,10 @@ func main() {
 	}
 
 	if *server {
-		log.Print("server mode is not implemented yet.")
+		r := mux.NewRouter()
+		r.HandleFunc("/", getHandler).Methods("GET")
+	
+		log.Print("Server started on localhost:8080")
+		log.Fatal(http.ListenAndServe(":8080", r))
 	}
 }
