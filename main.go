@@ -2,30 +2,29 @@ package main
 
 import (
 	"flag"
-	"log"
 	"io"
+	"log"
 	"net/http"
-	
+
 	"github.com/gorilla/mux"
-	"github.com/jimareed/slides"
 	"github.com/jimareed/drawing"
+	"github.com/jimareed/slides"
 )
 
+var mainDeck = slides.SlideDeck{}
 
 func getHandler(w http.ResponseWriter, r *http.Request) {
 
-	d, err := drawing.FromString("test")
-	if err != nil {
-		log.Fatal(err)
+	svg := ""
+
+	if len(mainDeck.Slides) > 0 {
+		svg, err := drawing.ToSvg(mainDeck.Slides[0].Drawing)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
-	s, err := drawing.ToSvg(d)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	io.WriteString(w, "<html><body>" + s + "</body></html>\n")
-	
+	io.WriteString(w, "<html><body>"+svg+"</body></html>\n")
 }
 
 func main() {
@@ -40,14 +39,14 @@ func main() {
 	if *help {
 		log.Fatal("usage: slide-generator [-input <path>][-output <path>][-server][-help]")
 	}
-		
+
 	if *input == "" {
 		*input = "./slides"
 	}
 
 	log.Print("reading deck from ", *input)
 
-	deck, err := slides.Read(*input)
+	mainDeck, err := slides.Read(*input)
 	if err == nil {
 		log.Print(deck.Title, " read successful.")
 	} else {
@@ -67,7 +66,7 @@ func main() {
 	if *server {
 		r := mux.NewRouter()
 		r.HandleFunc("/", getHandler).Methods("GET")
-	
+
 		log.Print("Server started on localhost:8080")
 		log.Fatal(http.ListenAndServe(":8080", r))
 	}
