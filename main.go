@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/jimareed/slide-generator/slides"
+	"github.com/jimareed/slides"
 )
 
 func main() {
