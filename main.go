@@ -7,7 +7,6 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/jimareed/drawing"
 	"github.com/jimareed/slides"
 )
 
@@ -15,16 +14,15 @@ var mainDeck = slides.SlideDeck{}
 
 func getHandler(w http.ResponseWriter, r *http.Request) {
 
-	svg := ""
-
-	if len(mainDeck.Slides) > 0 {
-		svg, err := drawing.ToSvg(mainDeck.Slides[0].Drawing)
-		if err != nil {
-			log.Fatal(err)
-		}
+	if len(mainDeck.Slides) < 1 {
+		mainDeck, _ = slides.Read("./slides")
+	}
+	content, err := slides.ToHtml(mainDeck)
+	if err != nil {
+		content = "Error"
 	}
 
-	io.WriteString(w, "<html><body>"+svg+"</body></html>\n")
+	io.WriteString(w, "<html><body>"+content+"</body></html>\n")
 }
 
 func main() {
@@ -48,16 +46,16 @@ func main() {
 
 	mainDeck, err := slides.Read(*input)
 	if err == nil {
-		log.Print(deck.Title, " read successful.")
+		log.Print(mainDeck.Title, " read successful.")
 	} else {
 		log.Fatal(err)
 	}
 
 	if *output != "" {
-		log.Print("writing ", deck.Title, " to ", *output)
-		err = slides.Write(deck, *output)
+		log.Print("writing ", mainDeck.Title, " to ", *output)
+		err = slides.Write(mainDeck, *output)
 		if err == nil {
-			log.Print(deck.Title, " write successful.")
+			log.Print(mainDeck.Title, " write successful.")
 		} else {
 			log.Fatal(err)
 		}

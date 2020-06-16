@@ -1,7 +1,1 @@
-{
-    "width":800,
-    "height":600,
-    "rectWidth":90,
-    "rectHeight":60,
-    "rects":[{"x":40,"y":30}]
-}
+{"width":800,"height":600,"rectWidth":90,"rectHeight":60,"rects":[{"x":40,"y":30,"width":90,"height":60},{"x":140,"y":130,"width":90,"height":60}]}
