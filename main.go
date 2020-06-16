@@ -14,9 +14,7 @@ var mainDeck = slides.SlideDeck{}
 
 func getHandler(w http.ResponseWriter, r *http.Request) {
 
-	if len(mainDeck.Slides) < 1 {
-		mainDeck, _ = slides.Read("./slides")
-	}
+	mainDeck, _ = slides.Read("./slides")
 	content, err := slides.ToHtml(mainDeck)
 	if err != nil {
 		content = "Error"
