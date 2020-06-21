@@ -1,11 +1,11 @@
 {"width":900,"height":600,"rectWidth":180,"rectHeight":120,
  "shapes":[
-     {"x":281,"y":80,"width":180,"height":120,"type":"text","desc":"Examples","size":36,"style":""},
-     {"x":162,"y":156,"width":180,"height":120,"type":"text","desc":"Slideshow","size":20,"style":""},
-     {"x":172,"y":196,"width":180,"height":120,"type":"text","desc":"Main page","size":14,"style":""},
-     {"x":444,"y":156,"width":180,"height":120,"type":"text","desc":"Instructions","size":20,"style":""},
-     {"x":456,"y":196,"width":180,"height":120,"type":"text","desc":"Steps to use","size":14,"style":""},
-     {"x":256,"y":280,"width":180,"height":120,"type":"text","desc":"(more examples coming soon)","size":16,"style":""}
+     {"x":281,"y":80,"width":180,"height":120,"type":"text","desc":"Examples","size":36,"style":"","slide":""},
+     {"x":162,"y":156,"width":180,"height":120,"type":"text","desc":"Slideshow","size":20,"style":"","slide":""},
+     {"x":172,"y":196,"width":180,"height":120,"type":"text","desc":"Main page","size":14,"style":"","slide":""},
+     {"x":444,"y":156,"width":180,"height":120,"type":"text","desc":"Instructions","size":20,"style":"","slide":""},
+     {"x":456,"y":196,"width":180,"height":120,"type":"text","desc":"Steps to use","size":14,"style":"","slide":""},
+     {"x":256,"y":280,"width":180,"height":120,"type":"text","desc":"(more examples coming soon)","size":16,"style":"","slide":""}
 ],
 "connectors":[
 ],
