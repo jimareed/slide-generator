@@ -25,9 +25,7 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	server := flag.Bool("server", false, "run in server mode")
 	input := flag.String("input", "", "path to source")
-	output := flag.String("output", "", "path to source")
 	help := flag.Bool("help", false, "help")
 
 	flag.Parse()
@@ -49,21 +47,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if *output != "" {
-		log.Print("writing ", mainDeck.Title, " to ", *output)
-		err = slides.Write(mainDeck, *output)
-		if err == nil {
-			log.Print(mainDeck.Title, " write successful.")
-		} else {
-			log.Fatal(err)
-		}
-	}
+	r := mux.NewRouter()
+	r.HandleFunc("/", getHandler).Methods("GET")
 
-	if *server {
-		r := mux.NewRouter()
-		r.HandleFunc("/", getHandler).Methods("GET")
-
-		log.Print("Server started on localhost:8080")
-		log.Fatal(http.ListenAndServe(":8080", r))
-	}
+	log.Print("Server started on localhost:8080")
+	log.Fatal(http.ListenAndServe(":8080", r))
 }
