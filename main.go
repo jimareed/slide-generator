@@ -10,14 +10,24 @@ import (
 	"github.com/jimareed/slides"
 )
 
-var mainDeck = slides.SlideDeck{}
-
 func getHandler(w http.ResponseWriter, r *http.Request) {
 
-	mainDeck, _ = slides.Read("./slides")
-	content, err := slides.ToHtml(mainDeck)
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+	if id == "" {
+		id = "default"
+	}
+
+	content := ""
+	deck, err := slides.Read("./slides", id)
 	if err != nil {
-		content = "Error"
+		content = "Invalid File"
+	} else {
+		content, err = slides.ToHtml(deck)
+		if err != nil {
+			content = "Error"
+		}
 	}
 
 	io.WriteString(w, "<html><body>"+content+"</body></html>\n")
@@ -40,15 +50,9 @@ func main() {
 
 	log.Print("reading deck from ", *input)
 
-	mainDeck, err := slides.Read(*input)
-	if err == nil {
-		log.Print(mainDeck.Title, " read successful.")
-	} else {
-		log.Fatal(err)
-	}
-
 	r := mux.NewRouter()
 	r.HandleFunc("/", getHandler).Methods("GET")
+	r.HandleFunc("/{id}", getHandler).Methods("GET")
 
 	log.Print("Server started on localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", r))
