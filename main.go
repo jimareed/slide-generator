@@ -10,6 +10,8 @@ import (
 	"github.com/jimareed/slides"
 )
 
+var filePath = "./slides"
+
 func getHandler(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
@@ -20,7 +22,7 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	content := ""
-	deck, err := slides.Read("./slides", id)
+	deck, err := slides.Read(filePath, id)
 	if err != nil {
 		content = "Invalid File"
 	} else {
@@ -44,12 +46,11 @@ func main() {
 		log.Fatal("usage: slide-generator [-input <path>][-output <path>][-server][-help]")
 	}
 
-	if *input == "" {
-		// TODO input from another location is not supported yet
-		*input = "./slides"
+	if *input != "" {
+		filePath = *input
 	}
 
-	log.Print("reading deck from ", *input)
+	log.Print("reading deck from ", filePath)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", getHandler).Methods("GET")
