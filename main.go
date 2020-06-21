@@ -45,6 +45,7 @@ func main() {
 	}
 
 	if *input == "" {
+		// TODO input from another location is not supported yet
 		*input = "./slides"
 	}
 
