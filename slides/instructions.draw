@@ -1,0 +1,47 @@
+{"width":900,"height":600,"rectWidth":180,"rectHeight":120,
+ "shapes":[
+     {"x":40,"y":130,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":""},
+     {"x":40,"y":400,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":""},
+     {"x":500,"y":400,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":""},
+     {"x":500,"y":130,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":""},
+     {"x":281,"y":80,"width":180,"height":120,"type":"text","desc":"Instructions","size":36,"style":""},
+     {"x":102,"y":156,"width":180,"height":120,"type":"text","desc":"Step 1","size":20,"style":""},
+     {"x":54,"y":196,"width":180,"height":120,"type":"text","desc":"Use Block Diagram Editor","size":14,"style":""},
+     {"x":80,"y":216,"width":180,"height":120,"type":"text","desc":"to create a drawing","size":14,"style":""},
+     {"x":102,"y":426,"width":180,"height":120,"type":"text","desc":"Step 2","size":20,"style":""},
+     {"x":76,"y":465,"width":180,"height":120,"type":"text","desc":"Import drawing file","size":14,"style":""},
+     {"x":90,"y":485,"width":180,"height":120,"type":"text","desc":"into Slideshow","size":14,"style":""},
+     {"x":564,"y":426,"width":180,"height":120,"type":"text","desc":"Step 3","size":20,"style":""},
+     {"x":552,"y":465,"width":180,"height":120,"type":"text","desc":"Add text and","size":14,"style":""},
+     {"x":558,"y":485,"width":180,"height":120,"type":"text","desc":"transitions","size":14,"style":""},
+     {"x":564,"y":156,"width":180,"height":120,"type":"text","desc":"Step 4","size":20,"style":""},
+     {"x":550,"y":196,"width":180,"height":120,"type":"text","desc":"Run Slideshow","size":14,"style":""},
+     {"x":574,"y":216,"width":180,"height":120,"type":"text","desc":"to play","size":14,"style":""},
+     {"x":280,"y":560,"width":180,"height":120,"type":"text","desc":"(see readme for details)","size":16,"style":""}
+],
+"connectors":[
+     {"shape1":0,"shape2":1},
+     {"shape1":1,"shape2":2},
+     {"shape1":2,"shape2":3}
+],
+"transitions":[
+     {"duration":8},
+     {"duration":18},
+     {"duration":30},
+     {"duration":40},
+     {"duration":4},
+     {"duration":8},
+     {"duration":12},
+     {"duration":12},
+     {"duration":18},
+     {"duration":22},
+     {"duration":22},
+     {"duration":30},
+     {"duration":34},
+     {"duration":34},
+     {"duration":40},
+     {"duration":44},
+     {"duration":44},
+     {"duration":50}
+]
+}
