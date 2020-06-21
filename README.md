@@ -15,7 +15,7 @@ Use Block Diagram Editor to create a drawing.
 Import drawing file into Slideshow. Copy an existing draw file as a starting point. Coming soon: copy Block Diagram Editor diagram to the clipboard in a draw format. For now, from Chrome right click in the Block Diagram Editor and select "Inspect". Use this to determine the coordinates to use for diagram shapes.
 
 ### Step 3
-Add text and transitions
+Add text and transitions (make changes directly in the draw file).
 
 ### Step 4
 Build and run slideshow to play. Open app at http://localhost:8080.
