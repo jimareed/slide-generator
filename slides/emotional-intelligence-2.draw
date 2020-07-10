@@ -1,0 +1,24 @@
+{"width":900,"height":600,"rectWidth":180,"rectHeight":120,
+ "shapes":[
+     {"x":270,"y":170,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":""},
+     {"x":60,"y":30,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":""},
+     {"x":500,"y":30,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":""},
+     {"x":500,"y":300,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"examples"},
+     {"x":225,"y":240,"width":180,"height":120,"type":"text","desc":"Emotional Intelligence helps with the hard stuff","size":20,"style":"","slide":""},
+     {"x":60,"y":80,"width":180,"height":120,"type":"text","desc":"Engineering is easy.","size":24,"style":"","slide":""},
+     {"x":260,"y":80,"width":180,"height":120,"type":"text","desc":"People are hard.","size":24,"style":"","slide":""},
+     {"x":60,"y":110,"width":180,"height":120,"type":"text","desc":"- Bill Coughran (former SVP Google)","size":12,"style":"","slide":""}
+],
+"connectors":[
+     {"shape1":0,"shape2":1}
+],
+"transitions":[
+     {"duration":18},
+     {"duration":18},
+     {"duration":0},
+     {"duration":18},
+     {"duration":18},
+     {"duration":3},
+     {"duration":8},
+     {"duration":12}]
+}
