@@ -3,14 +3,36 @@ package main
 import (
 	"flag"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/jimareed/slides"
+	"github.com/jimareed/drawing"
 )
 
 var filePath = "./slides"
+
+func drawingToHtml(path string, name string) (string, error) {
+
+	filename := path + "/" + name + ".draw"
+	content, err := ioutil.ReadFile(filename)
+	if err != nil {
+		log.Print(err)
+		return "error opening file", err
+	}
+	text := string(content)
+
+	d, err := drawing.FromString(text)
+	if err != nil {
+		log.Print(err)
+		return "invalid drawing", err
+	}
+
+	s, err := drawing.ToSvg(d)
+
+	return s, err
+}
 
 func getHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -21,18 +43,14 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 		id = "default"
 	}
 
-	content := ""
-	deck, err := slides.Read(filePath, id)
-	if err != nil {
-		content = "Invalid File"
-	} else {
-		content, err = slides.ToHtml(deck)
+	if id != "favicon.ico" {
+		content, err := drawingToHtml(filePath, id)
 		if err != nil {
-			content = "Error"
+			content = "Invalid File"
 		}
-	}
 
-	io.WriteString(w, "<html><body>"+content+"</body></html>\n")
+		io.WriteString(w, "<html><body>"+content+"</body></html>\n")
+	}
 }
 
 func main() {
@@ -50,7 +68,7 @@ func main() {
 		filePath = *input
 	}
 
-	log.Print("reading deck from ", filePath)
+	log.Print("reading from ", filePath)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", getHandler).Methods("GET")
