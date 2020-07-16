@@ -32,7 +32,7 @@ go build
 ./slideshow [-input <path>]
 ```
 
-### docker build
+### docker build locally
 ```
 docker build --tag slideshow-image .
 docker run --name slideshow -p 8080:8080 -d slideshow-image
@@ -40,4 +40,11 @@ docker run --name slideshow -p 8080:8080 -d slideshow-image
 docker stop slideshow
 docker rm slideshow
 docker rmi slideshow-image
+```
+
+### run public image
+```
+docker run -p 8080:8080 -d --name slideshow jimareed/slideshow
+
+docker rm -f slideshow
 ```
