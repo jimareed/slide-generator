@@ -7,7 +7,9 @@
      {"x":420,"y":130,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"instructions"},
      {"x":444,"y":156,"width":180,"height":120,"type":"text","desc":"Instructions","size":20,"style":"","slide":""},
      {"x":456,"y":196,"width":180,"height":120,"type":"text","desc":"Steps to use","size":14,"style":"","slide":""},
-     {"x":256,"y":280,"width":180,"height":120,"type":"text","desc":"(more examples coming soon)","size":16,"style":"","slide":""}
+     {"x":236,"y":230,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"emotional-intelligence"},
+     {"x":260,"y":256,"width":180,"height":120,"type":"text","desc":"Emotional Intelligence","size":20,"style":"","slide":""},
+     {"x":315,"y":296,"width":180,"height":120,"type":"text","desc":"EQ Overview","size":14,"style":"","slide":""}
 ],
 "connectors":[
 ],
@@ -19,6 +21,8 @@
      {"duration":16},
      {"duration":16},
      {"duration":20},
-     {"duration":24}
+     {"duration":20},
+     {"duration":24},
+     {"duration":28}
 ]
 }

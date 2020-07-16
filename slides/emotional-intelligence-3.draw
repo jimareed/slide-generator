@@ -23,7 +23,7 @@
      {"x":835,"y":235,"width":180,"height":130,"type":"text","desc":"High Performance","size":20,"style":"","slide":""},
      {"x":880,"y":255,"width":180,"height":130,"type":"text","desc":"Teams","size":20,"style":"","slide":""},
      {"x":130,"y":380,"x2":730,"y2":130,"type":"line"},
-     {"x":645,"y":520,"width":180,"height":130,"type":"text","desc":"Emotional Intelligence","size":20,"style":"","slide":""}
+     {"x":600,"y":520,"width":180,"height":130,"type":"text","desc":"High Emotional Intelligence","size":20,"style":"","slide":""}
 ],
 "connectors":[
      {"shape1":0,"shape2":1},
