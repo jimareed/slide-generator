@@ -29,7 +29,7 @@ func drawingToHtml(path string, name string) (string, error) {
 		return "invalid drawing", err
 	}
 
-	s, err := drawing.ToSvg(d)
+	s, err := drawing.ToHtml(d)
 
 	return s, err
 }
@@ -49,7 +49,7 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 			content = "Invalid File"
 		}
 
-		io.WriteString(w, "<html><body>"+content+"</body></html>\n")
+		io.WriteString(w, content)
 	}
 }
 
