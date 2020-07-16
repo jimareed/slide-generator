@@ -1,0 +1,13 @@
+{"width":900,"height":600,"rectWidth":40,"rectHeight":40,
+ "shapes":[
+     {"x":200,"y":180,"width":180,"height":120,"type":"text","desc":"Do I really need to care about soft skills?","size":24,"style":"","slide":""},
+     {"x":250,"y":250,"width":180,"height":120,"type":"text","desc":"I just want to write great code.","size":24,"style":"","slide":""}
+],
+"connectors":[
+],
+"transitions":[
+     {"duration":4},
+     {"duration":10}
+],
+"nextPage":{"name":"emotional-intelligence-5","delay":10}
+}

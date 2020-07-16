@@ -1,0 +1,62 @@
+{"width":900,"height":650,"rectWidth":360,"rectHeight":60,
+ "shapes":[
+     {"x":70,"y":20,"width":360,"height":280,"type":"rect"},
+     {"x":70,"y":300,"width":360,"height":280,"type":"rect"},
+     {"x":430,"y":20,"width":360,"height":280,"type":"rect"},
+     {"x":430,"y":300,"width":360,"height":280,"type":"rect"},
+
+     {"x":265,"y":620,"type":"text","desc":"Emotional","size":36},
+     {"x":430,"y":620,"type":"text","desc":"Intelligence","size":36},
+
+     {"x":175,"y":60,"type":"text","desc":"Self Awareness","size":24},
+     {"x":115,"y":150,"type":"text","desc":"Self Confidence","size":20},
+     {"x":115,"y":185,"type":"text","desc":"Self Assessment","size":20},
+     {"x":115,"y":220,"type":"text","desc":"Self Awareness","size":20},
+
+     {"x":530,"y":60,"type":"text","desc":"Social Awareness","size":24},
+     {"x":480,"y":160,"type":"text","desc":"Empathy","size":20},
+     {"x":480,"y":195,"type":"text","desc":"Organizational Awareness","size":20},
+
+     {"x":165,"y":340,"type":"text","desc":"Self Management","size":24},
+     {"x":115,"y":400,"type":"text","desc":"Self Control","size":20},
+     {"x":115,"y":435,"type":"text","desc":"Trustworthiness","size":20},
+     {"x":115,"y":470,"type":"text","desc":"Motivation","size":20},
+     {"x":115,"y":505,"type":"text","desc":"Disipline","size":20},
+     {"x":115,"y":545,"type":"text","desc":"Optimism","size":20},
+
+     {"x":480,"y":340,"type":"text","desc":"Relationship Management","size":24},
+     {"x":480,"y":410,"type":"text","desc":"Influence","size":20},
+     {"x":480,"y":445,"type":"text","desc":"Conflict Management","size":20},
+     {"x":480,"y":480,"type":"text","desc":"Relationships","size":20},
+     {"x":480,"y":515,"type":"text","desc":"Teamwork & Collaboration","size":20}
+],
+"connectors":[
+],
+"transitions":[
+     {"duration":2},
+     {"duration":7},
+     {"duration":12},
+     {"duration":17},
+     {"duration":22},
+     {"duration":22},
+     {"duration":2},
+     {"duration":2},
+     {"duration":2},
+     {"duration":2},
+     {"duration":12},
+     {"duration":12},
+     {"duration":12},
+     {"duration":7},
+     {"duration":7},
+     {"duration":7},
+     {"duration":7},
+     {"duration":7},
+     {"duration":7},
+     {"duration":17},
+     {"duration":17},
+     {"duration":17},
+     {"duration":17},
+     {"duration":17}
+],
+"nextPage":{"name":"","delay":0}
+}

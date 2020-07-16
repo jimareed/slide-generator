@@ -1,0 +1,40 @@
+{"width":900,"height":600,"rectWidth":40,"rectHeight":40,
+ "shapes":[
+     {"x":330,"y":430,"width":40,"height":40,"type":"rect","style":"hidden"},
+     {"x":435,"y":325,"width":40,"height":40,"type":"rect","style":"hidden"},
+     {"x":200,"y":75,"type":"text","desc":"Great Software Developers are a Triple Threat","size":24},
+     {"x":420,"y":185,"width":140,"type":"circle"},
+     {"x":355,"y":300,"width":140,"type":"circle"},
+     {"x":485,"y":300,"width":140,"type":"circle"},
+     {"x":315,"y":298,"type":"text","desc":"Technical","size":20},
+     {"x":330,"y":318,"type":"text","desc":"Skills","size":20},
+     {"x":385,"y":180,"type":"text","desc":"Sense of","size":20},
+     {"x":388,"y":200,"type":"text","desc":"Purpose","size":20},
+     {"x":445,"y":298,"type":"text","desc":"Emotional","size":20},
+     {"x":440,"y":318,"type":"text","desc":"Intelligence","size":20},
+     {"x":220,"y":468,"type":"text","desc":"Lack of these skills","size":20},
+     {"x":380,"y":468,"type":"text","desc":"will slow you down and","size":20},
+     {"x":280,"y":488,"type":"text","desc":"and create barriers to success.","size":20}
+],
+"connectors":[
+     {"shape1":0,"shape2":1}
+],
+"transitions":[
+     {"duration":20},
+     {"duration":20},
+     {"duration":4},
+     {"duration":12},
+     {"duration":8},
+     {"duration":16},
+     {"duration":8},
+     {"duration":8},
+     {"duration":12},
+     {"duration":12},
+     {"duration":16},
+     {"duration":16},
+     {"duration":20},
+     {"duration":20},
+     {"duration":22}
+],
+"nextPage":{"name":"emotional-intelligence-6","delay":20}
+}
