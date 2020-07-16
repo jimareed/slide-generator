@@ -43,5 +43,6 @@
      {"duration":36},
      {"duration":36},
      {"duration":40}
-]
+],
+"nextPage":{"name":"examples","delay":50}
 }

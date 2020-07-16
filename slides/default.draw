@@ -34,5 +34,6 @@
      {"duration":16},
      {"duration":20},
      {"duration":24}
-]
+],
+"nextPage":{"name":"instructions","delay":30}
 }
