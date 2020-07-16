@@ -35,9 +35,9 @@
      {"duration":10},
      {"duration":10},
      {"duration":10},
-     {"duration":34},
-     {"duration":40},
-     {"duration":40},
+     {"duration":29},
+     {"duration":35},
+     {"duration":35},
      {"duration":3},
      {"duration":3},
      {"duration":3},
@@ -52,10 +52,10 @@
      {"duration":14},
      {"duration":10},
      {"duration":10},
-     {"duration":34},
-     {"duration":34},
+     {"duration":29},
+     {"duration":29},
      {"duration":10},
-     {"duration":40}
+     {"duration":35}
  ],
-"nextPage":{"name":"emotional-intelligence-4","delay":35}
+"nextPage":{"name":"emotional-intelligence-4","delay":30}
 }

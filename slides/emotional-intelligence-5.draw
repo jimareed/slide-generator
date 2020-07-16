@@ -9,9 +9,9 @@
      {"x":330,"y":248,"type":"text","desc":"Skills","size":20},
      {"x":445,"y":228,"type":"text","desc":"Emotional","size":20},
      {"x":440,"y":248,"type":"text","desc":"Intelligence","size":20},
-     {"x":220,"y":408,"type":"text","desc":"Lack of these skills","size":20},
-     {"x":380,"y":408,"type":"text","desc":"will slow you down and","size":20},
-     {"x":280,"y":428,"type":"text","desc":"and create barriers to success.","size":20}
+     {"x":230,"y":408,"type":"text","desc":"Lack of these skills","size":20},
+     {"x":390,"y":408,"type":"text","desc":"will slow you down","size":20},
+     {"x":280,"y":433,"type":"text","desc":"and create barriers to success.","size":20}
 ],
 "connectors":[
      {"shape1":0,"shape2":1}
