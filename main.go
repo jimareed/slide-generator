@@ -12,8 +12,9 @@ import (
 )
 
 var filePath = "./slides"
+var autoPlay = true
 
-func drawingToHtml(path string, name string) (string, error) {
+func drawingToHtml(path string, name string, autoPlay bool) (string, error) {
 
 	filename := path + "/" + name + ".draw"
 	content, err := ioutil.ReadFile(filename)
@@ -29,7 +30,7 @@ func drawingToHtml(path string, name string) (string, error) {
 		return "invalid drawing", err
 	}
 
-	s, err := drawing.ToHtml(d)
+	s, err := drawing.ToHtml(d, autoPlay)
 
 	return s, err
 }
@@ -44,7 +45,7 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if id != "favicon.ico" {
-		content, err := drawingToHtml(filePath, id)
+		content, err := drawingToHtml(filePath, id, autoPlay)
 		if err != nil {
 			content = "Invalid File"
 		}
