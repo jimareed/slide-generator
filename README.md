@@ -1,6 +1,6 @@
 # Slideshow
 
-Build interactive presentations using animation to increase impact.
+Hobby project that builds interactive presentations with animation.
 
 <p  align="center">
     <img src="./images/slideshow.png" alt="Slideshow" width="50%" height="50%"/>
