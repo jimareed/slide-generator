@@ -9,7 +9,7 @@ Hobby project that builds interactive presentations with animation.
 ## Instructions
 
 ### Step 1
-Use Block Diagram Editor to create a drawing.
+Use Block Diagram Editor to create a drawing (https://github.com/jimareed/block-diagram-editor).
 
 ### Step 2
 Import drawing file into Slideshow. Copy an existing draw file as a starting point. Coming soon: copy Block Diagram Editor diagram to the clipboard in a draw format. For now, from Chrome right click in the Block Diagram Editor and select "Inspect". Use this to determine the coordinates to use for diagram shapes.
