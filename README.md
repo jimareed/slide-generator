@@ -1,6 +1,6 @@
 # Slideshow
 
-Hobby project that builds interactive presentations with animation.
+Hobby project to continue learning Go. This project builds interactive presentations that contain animation.
 
 <p  align="center">
     <img src="./images/slideshow.png" alt="Slideshow" width="50%" height="50%"/>
