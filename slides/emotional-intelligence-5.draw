@@ -1,17 +1,17 @@
-{"width":900,"height":600,"rectWidth":40,"rectHeight":40,
+{"width":1024,"height":768,"rectWidth":40,"rectHeight":40,
  "shapes":[
-     {"x":330,"y":370,"width":40,"height":40,"type":"rect","style":"hidden"},
-     {"x":435,"y":265,"width":40,"height":40,"type":"rect","style":"hidden"},
-     {"x":200,"y":75,"type":"text","desc":"Emotional Intelligence helps you get more done","size":24},
-     {"x":355,"y":230,"width":140,"type":"circle"},
-     {"x":485,"y":230,"width":140,"type":"circle"},
-     {"x":315,"y":228,"type":"text","desc":"Technical","size":20},
-     {"x":330,"y":248,"type":"text","desc":"Skills","size":20},
-     {"x":445,"y":228,"type":"text","desc":"Emotional","size":20},
-     {"x":440,"y":248,"type":"text","desc":"Intelligence","size":20},
-     {"x":230,"y":408,"type":"text","desc":"Lack of these skills","size":20},
-     {"x":390,"y":408,"type":"text","desc":"will slow you down","size":20},
-     {"x":280,"y":433,"type":"text","desc":"and create barriers to success.","size":20}
+     {"x":390,"y":410,"width":40,"height":40,"type":"rect","style":"hidden"},
+     {"x":495,"y":305,"width":40,"height":40,"type":"rect","style":"hidden"},
+     {"x":260,"y":115,"type":"text","desc":"Emotional Intelligence helps you get more done","size":24},
+     {"x":415,"y":270,"width":140,"type":"circle"},
+     {"x":545,"y":270,"width":140,"type":"circle"},
+     {"x":375,"y":268,"type":"text","desc":"Technical","size":20},
+     {"x":390,"y":288,"type":"text","desc":"Skills","size":20},
+     {"x":505,"y":268,"type":"text","desc":"Emotional","size":20},
+     {"x":500,"y":288,"type":"text","desc":"Intelligence","size":20},
+     {"x":290,"y":448,"type":"text","desc":"Lack of these skills","size":20},
+     {"x":450,"y":448,"type":"text","desc":"will slow you down","size":20},
+     {"x":340,"y":473,"type":"text","desc":"and create barriers to success.","size":20}
 ],
 "connectors":[
      {"shape1":0,"shape2":1}

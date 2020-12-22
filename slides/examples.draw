@@ -1,15 +1,15 @@
-{"width":900,"height":600,"rectWidth":180,"rectHeight":120,
+{"width":1024,"height":768,"rectWidth":180,"rectHeight":120,
  "shapes":[
-     {"x":281,"y":80,"width":180,"height":120,"type":"text","desc":"Examples","size":36,"style":"","slide":""},
-     {"x":140,"y":140,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"default"},
-     {"x":162,"y":156,"width":180,"height":120,"type":"text","desc":"Slideshow","size":20,"style":"","slide":""},
-     {"x":172,"y":196,"width":180,"height":120,"type":"text","desc":"Main page","size":14,"style":"","slide":""},
-     {"x":420,"y":130,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"instructions"},
-     {"x":444,"y":156,"width":180,"height":120,"type":"text","desc":"Instructions","size":20,"style":"","slide":""},
-     {"x":456,"y":196,"width":180,"height":120,"type":"text","desc":"Steps to use","size":14,"style":"","slide":""},
-     {"x":236,"y":230,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"emotional-intelligence"},
-     {"x":260,"y":256,"width":180,"height":120,"type":"text","desc":"Emotional Intelligence","size":20,"style":"","slide":""},
-     {"x":315,"y":296,"width":180,"height":120,"type":"text","desc":"EQ Overview","size":14,"style":"","slide":""}
+     {"x":411,"y":200,"width":180,"height":120,"type":"text","desc":"Examples","size":36,"style":"","slide":""},
+     {"x":270,"y":260,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"default"},
+     {"x":292,"y":276,"width":180,"height":120,"type":"text","desc":"Slideshow","size":20,"style":"","slide":""},
+     {"x":302,"y":316,"width":180,"height":120,"type":"text","desc":"Main page","size":14,"style":"","slide":""},
+     {"x":550,"y":250,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"instructions"},
+     {"x":574,"y":276,"width":180,"height":120,"type":"text","desc":"Instructions","size":20,"style":"","slide":""},
+     {"x":586,"y":316,"width":180,"height":120,"type":"text","desc":"Steps to use","size":14,"style":"","slide":""},
+     {"x":366,"y":350,"width":180,"height":120,"type":"rect","desc":"","size":0,"style":"hidden","slide":"emotional-intelligence"},
+     {"x":390,"y":376,"width":180,"height":120,"type":"text","desc":"Emotional Intelligence","size":20,"style":"","slide":""},
+     {"x":445,"y":416,"width":180,"height":120,"type":"text","desc":"EQ Overview","size":14,"style":"","slide":""}
 ],
 "connectors":[
 ],

@@ -81,6 +81,6 @@ func main() {
 	r.HandleFunc("/", getHandler).Methods("GET")
 	r.HandleFunc("/{id}", getHandler).Methods("GET")
 
-	log.Printf("Server started at %s\n", port)
+	log.Printf("Server started at :%s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
