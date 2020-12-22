@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/jimareed/drawing"
@@ -56,6 +57,11 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	input := flag.String("input", "", "path to source")
 	help := flag.Bool("help", false, "help")
 
@@ -75,6 +81,6 @@ func main() {
 	r.HandleFunc("/", getHandler).Methods("GET")
 	r.HandleFunc("/{id}", getHandler).Methods("GET")
 
-	log.Print("Server started on localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Printf("Server started at %s\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, r))
 }

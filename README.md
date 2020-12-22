@@ -24,6 +24,7 @@ Build and run slideshow to play. Open app at http://localhost:8080.
 
 ### build
 ```
+go get .
 go build
 ```
 
