@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"io"
 	"io/ioutil"
@@ -11,6 +12,11 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jimareed/drawing"
 )
+
+type Specification struct {
+	Id   string `json:"id"`
+	Spec string `json:"specification"`
+}
 
 var filePath = "./slides"
 var autoPlay = true
@@ -36,7 +42,7 @@ func drawingToHtml(path string, name string, autoPlay bool) (string, error) {
 	return s, err
 }
 
-func getHandler(w http.ResponseWriter, r *http.Request) {
+func getSlideshowsHandler(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
 	id := vars["id"]
@@ -78,9 +84,91 @@ func main() {
 	log.Print("reading from ", filePath)
 
 	r := mux.NewRouter()
-	r.HandleFunc("/", getHandler).Methods("GET")
-	r.HandleFunc("/{id}", getHandler).Methods("GET")
+	r.HandleFunc("/slideshows/{id}", getSlideshowsHandler).Methods("GET")
+	r.HandleFunc("/specs", postSpecsHandler).Methods("POST")
+	r.HandleFunc("/specs/{id}", getSpecsHandler).Methods("GET")
+	r.HandleFunc("/specs/{id}", putSpecsHandler).Methods("PUT")
+	r.HandleFunc("/specs/{id}", deleteSpecsHandler).Methods("DELETE")
 
 	log.Printf("Server started at :%s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
+}
+
+func getSpecsHandler(w http.ResponseWriter, r *http.Request) {
+
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+	var spec = Specification{}
+	spec.Id = id
+
+	s, err := readSpec(id)
+	if err != nil {
+		http.Error(w, err.Error(), 404)
+		return
+	}
+
+	spec.Spec = s
+
+	payload, _ := json.Marshal(spec)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(payload))
+}
+
+func putSpecsHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+	reqBody, _ := ioutil.ReadAll(r.Body)
+	var spec Specification
+	json.Unmarshal(reqBody, &spec)
+
+	err := updateSpec(id, spec.Spec)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	payload, _ := json.Marshal(spec)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(payload))
+}
+
+func postSpecsHandler(w http.ResponseWriter, r *http.Request) {
+
+	id, err := createSpec("")
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	var spec = Specification{}
+	spec.Id = id
+	spec.Spec = ""
+
+	payload, _ := json.Marshal(spec)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(payload))
+}
+
+func deleteSpecsHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+	var spec = Specification{}
+	spec.Id = id
+
+	err := deleteSpec(id)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	payload, _ := json.Marshal(spec)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(payload))
 }
