@@ -11,6 +11,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/jimareed/drawing"
+	"github.com/rs/cors"
 )
 
 type Specification struct {
@@ -90,8 +91,14 @@ func main() {
 	r.HandleFunc("/specs/{id}", putSpecsHandler).Methods("PUT")
 	r.HandleFunc("/specs/{id}", deleteSpecsHandler).Methods("DELETE")
 
+	// For dev only - Set up CORS so React client can consume our API
+	corsWrapper := cors.New(cors.Options{
+		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE"},
+		AllowedHeaders: []string{"Content-Type", "Origin", "Accept", "*"},
+	})
+
 	log.Printf("Server started at :%s\n", port)
-	log.Fatal(http.ListenAndServe(":"+port, r))
+	log.Fatal(http.ListenAndServe(":"+port, corsWrapper.Handler(r)))
 }
 
 func getSpecsHandler(w http.ResponseWriter, r *http.Request) {

@@ -7,6 +7,7 @@ RUN rm -f goapp
 RUN go get github.com/gorilla/mux
 RUN go get github.com/jimareed/slides
 RUN go get github.com/jimareed/drawing
+RUN go get github.com/rs/cors
 RUN go build -o ./goapp
 
 FROM alpine:3.7
