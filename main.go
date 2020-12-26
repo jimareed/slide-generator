@@ -22,6 +22,17 @@ type Specification struct {
 var filePath = "./slides"
 var autoPlay = true
 
+func specId2Name(id string) string {
+	if len(id) == 0 {
+		return ""
+	}
+	if id[0] >= '0' && id[0] <= '9' {
+		return "slideshow-" + id
+	}
+
+	return id
+}
+
 func drawingToHtml(path string, name string, autoPlay bool) (string, error) {
 
 	filename := path + "/" + name + ".draw"
@@ -53,7 +64,7 @@ func getSlideshowsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if id != "favicon.ico" {
-		content, err := drawingToHtml(filePath, id, autoPlay)
+		content, err := drawingToHtml(filePath, specId2Name(id), autoPlay)
 		if err != nil {
 			content = "Invalid File"
 		}
@@ -147,6 +158,7 @@ func postSpecsHandler(w http.ResponseWriter, r *http.Request) {
 
 	id, err := createSpec("")
 	if err != nil {
+		log.Printf("Error creating spec:" + err.Error())
 		http.Error(w, err.Error(), 500)
 		return
 	}
