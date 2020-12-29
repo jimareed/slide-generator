@@ -43,10 +43,14 @@ func drawingToHtml(path string, name string, autoPlay bool) (string, error) {
 	}
 	text := string(content)
 
-	d, err := drawing.FromString(text)
-	if err != nil {
-		log.Print(err)
-		return "invalid drawing", err
+	d := drawing.Drawing{}
+
+	if text != "" {
+		d, err = drawing.FromString(text)
+		if err != nil {
+			log.Print(err)
+			return "invalid drawing", err
+		}
 	}
 
 	s, err := drawing.ToHtml(d, autoPlay)
