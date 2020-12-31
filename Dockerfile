@@ -14,6 +14,5 @@ FROM alpine:3.7
 
 EXPOSE 8080
 COPY --from=builder /go/src/github.com/jimareed/app /usr/local/bin/
-RUN chown -R nobody:nogroup /usr/local/bin/goapp && chmod +x /usr/local/bin/goapp
-USER nobody
+RUN chmod +x /usr/local/bin/goapp
 CMD goapp -input /usr/local/bin/slides

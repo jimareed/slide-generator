@@ -10,6 +10,9 @@ import (
 var nextId = 1
 var specPath = "./slides"
 
+func setSpecPath(path string) {
+	specPath = path
+}
 
 func fileName(id string) string {
 

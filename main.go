@@ -95,6 +95,7 @@ func main() {
 
 	if *input != "" {
 		filePath = *input
+		setSpecPath(filePath)
 	}
 
 	log.Print("reading from ", filePath)
