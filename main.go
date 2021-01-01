@@ -90,7 +90,7 @@ func main() {
 	flag.Parse()
 
 	if *help {
-		log.Fatal("usage: slide-generator [-input <path>][-output <path>][-server][-help]")
+		log.Fatal("usage: slideshow [-input <path>][-help]")
 	}
 
 	if *input != "" {
